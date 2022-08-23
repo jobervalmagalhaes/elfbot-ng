@@ -1,0 +1,507 @@
+Movement
+follow {creature}: follows a creature (use stopattack to unfollow)
+allowwalk {item1} {item2}…: allows the client/bot to auto-walk on a certain item id
+disallowwalk {item1} {item2}…: disallows the client/bot to auto-walk on a certain item id
+dash: an exploit that increases your speed
+dashchase {creature}: client-sidedly chases a creature
+haste: casts utani hur if you are not current hasted
+charge: casts utani tempo hur if you are not current hasted (Knights)
+stronghaste: casts utani gran hur if you are not current hasted (Sorcerers and Druids)
+swiftfoot: casts utamo tempo san if you are not current hasted (Paladins)
+race: moves 1SQM in the direction you are facing (dash alternative?)
+moveto {x} {y} {z}: issues a move command of your character towards a certain location
+movee: moves you east
+moven: moves you north
+moves: moves you south
+movew: moves you west
+movene: moves you north-east
+movenw: moves you north-west
+movese: moves you south-east
+movesw: moves you south-west
+turnn: turns you north
+turne: turns you east
+turns: turns you south
+turnw: turns you west
+$posx: will return your current X position (e.g. if [$posx > 12345 && $posx < 54321] xlog, it will logout if your X position is between 12345 and 54321)
+$posy: will return your current Y position (e.g. say 'Y = $posy' , it will make your character say your current Y position)
+$posz: will return your current Z position (e.g. if [$posz == 7] say 'bye' , it will make your character say bye if your Z position is equal to 7)
+
+Healing
+autoheal: will force the bot to heal yourself if your HP is below 95%
+healparalysis {text} heals your paralysis with a certain spell
+health {hp%} {creature}: uses a light health potion on a creature when its HP is below a certain percentage
+shealth {hp%} {creature}: uses a strong health potion on a creature when its HP is below a certain percentage
+ghealth {hp%} {creature}: uses a great health potion on a creature when its HP is below a certain percentage
+uhealth {hp%} {creature}: uses a ultimate health potion on a creature when its HP is below a certain percentage
+gshealth {hp%} {creature}: uses a great spirit potion on a creature when its HP is below a certain percentage
+ihpc {hp%} {creature}: uses an IH rune on a creature when its HP is below a certain percentage
+mana {creature}: uses a light mana potion on a creature
+smana {creature}: uses a strong mana potion on a creature
+gmana {creature}: uses a great mana potion on a creature
+gsmana {creature}: uses a great spirit potion on a creature
+manashield: casts utamo vita if you not already have mana shield activated or your mana is sufficient
+refillmana {mp} {distance}: will try to mana your friends (if they're connected to a nav server)
+refillhealth {hp} {distance}: will try to heal your friends (if they have look info)
+sio {hp%} {creature}: casts exura sio on a creature when his HP is below a certain percentage
+uh {creature}: will heal a creature with a UH rune, if his HP percentage is below 95%
+uhpc {hp%} {creature}: uses an UH rune on a creature whose HP is below a certain percentage
+
+Attacking
+attack {creature}: attacks a creature
+stopattack: will stop attacking/following the creature you are currently attacking/following
+aimtype {creature}: uses the action/spell that is set in the Aimbot section, on a certain creature
+autoaim: casts the specified aimtype on the best enemy
+runtargeting: if you want to run targeting only when you have a certain button pressed, bind this to a key
+setattackmode {attackmode} {chasemode}: sets your current attack/chase mode ('offensive', 'defensive', 'balanced' and `'chase'`/`'stand'`)
+aimgfb: shoots a Great Fireball Rune on the best square where no friends will be shot
+aimavalanche: Shoots an Avalanche Rune on the best square where no friends will be shot
+aimthunderstorm: shoots a Thunderstorm on the best square where no friends will be shot
+aimstoneshower: shoots a stone shower on the best square where no friends will be shot
+sd {creature}: shoots a SD on a creature
+explo {creature}: shoots an explosion on a creature
+hmm {creature}: shoots a Heavy Magic Missile on a creature
+lmm {target}: shoots a Light Magic Missile rune on a target
+icicle {creature}: shoots an Icicle on a creature
+stalagmite {creature}: shoots a Stalagmite on a creature
+paralyze {creature}: shoots a Paralyze on a creature
+soulf {creature}: shoots a Soulfire on a creature
+ewave: casts exevo vis hur (Energy Wave) on target only if its on spell range
+wave {spellword}: casts a Wave spell (like exevo vis hur) only if target is on spell range
+exoricon {hp%}: casts exori con (Paladins) only if target is below certain HP % and on spell range
+exorihur {hp%}: casts exori hur (Knights) only if target is below certain HP % and on spell range
+exorigran {hp%}: casts exori gran (Knights) only if target is below certain HP % and close to you
+
+Combat
+mwallshield: shoots a magic wall in the square that will most effectively shield you from enemy fire
+mwallcover {creature}: shoot a magic wall which will best cover a creature of your choice to prevent enemies shooting/healing him
+magwall {creature}: shoots a magwall two squares in front of a creature
+keepmagwall: will keep shooting a magwall on the square you last attempted to shot a magwall on
+exivalast: exivas the last person you exivaed
+exivatarget: exivas your target
+ignoretarget {creature}: ignores a target
+
+Inventory
+useoncreature {itemid} {creature}: uses an item with a certain id on a creature
+useitem {useitem}: uses an item with a certain id
+usegrounditem {itemid}: uses a certain item on the ground that's within 1 squares range
+usegroundxyz {x} {y} {z}: uses the item that is currently on x y z
+useongrounditem {itemid} {itemid}: uses an item from your inventory on a ground item that's within 1 squares range
+useoninventoryitem {itemidtouse} {itemidtouseon}: uses an item from your inventory on your own inventory
+repeatuseongroundxyz {itemid} {itemidonground} {x} {y} {z}: repeats using a certain item from your inventory on an item on x y z until the item on ground no longer can be found
+useongroundxyz {itemid} {x} {y} {z}: use a certain item from your inventory on the item that is on a certain x y z location
+useitemsonground {sx} {sy} {sz} {dx} {dy} {dz}: uses the topmost item of a source tile onto the topmost item of a destination tile.
+reachgrounditem {itemid}: walks up to a certain item that is currently on your screen
+collectitems {backpack} {item1} {item2}…: collects items
+lootitems: loot items defined in the file lootitems.txt
+dropitemsxyzamount $posx $posy $posz {itemid} {amount}: Drops item/s on ground at specified coordinates
+dropitems {item1} {item2}…: Drops a list of items below you
+movenitems {item} {count} {'backpack'}: moves count amount of item to desired backpack
+moveitemonground {sx} {sy} {sz} {dx} {dy} {dz}: moves the top item from a source tile to a destination tile
+moveitems {itemid} {window}: moves all items with a certain id, to a window of a certain type
+moveitemsonto {itemid} {bpid} {bpindex} {window}: moves all items to a specific container (bpid), at a certain index in an open window
+crosshair {itemid}: makes a crosshair of the item ID, so you can shoot a rune, use a machete, etc.
+stackitems: groups stackable items in piles of 100, this is usually needed before dropping items
+$topitem.{x}.{y}.{z}: Returns the item at that exact position (e.g. $topitem.$posx.$posy.$posz will return what's behind you)
+$istileitem.{x}.{y}.{z}.{itemid}: it will return 1 there is a item of X item ID
+$itemcount.ITEMID: will return the amount of a visible item, you must change the ITEMID to a number, like 1234 (e.g. if [$itemcount.3286 > 10] gotolabel droplootonground, it will go to the label droplootonground if the amount of visible items of ID 3286 is higher than 10)
+$itemcount.'ITEMNAME': will return the amount of a item that you are using, you must change the ITEMNAME to an item name, like great mana potion (e.g. if [$itemcount.'mana potion' ⇐ 50] gotolabel buymfs, it will go to the label buymfs if a message with Using one of 50 mana potions… appears)
+countitemsvisible {item_id}: will count the total number of the item you have on any container you are carrying in the $count variable (i.e. countitems 3010 | setcaption $count emerald bangles)
+countitems {item_id}: will count the total number of the item you have on the open containers in the $count variable (i.e. countitems 3010 | setcaption $count emerald bangles). Seems to only work on Cavebot scripts though (if you don't need to do anything with the number and just want to see the number yourself, with useitem {itemid} you get a “Using one of 8 gold armors” message, just don't use it with consumables to avoid wasting)
+equipammy {itemid}: equips an amulet with a certain item id to your neck slot
+fastequipammy {itemid}: same as equipammy id, but will issue an equipment even if item with id isn’t already in the amulet slot (will spam)
+equipback {itemid}: equips a certain item in your backpack slot
+equipbelt {itemid}: equips a certain item in your belt slot
+equipboots {itemid}: equips a certain item in your boots slot
+equipchest {itemid}: equips a certain item in your chest slot
+equiplhand {itemid}: equips a certain item in your left-hand slot (the one you see on the right)
+equiprhand {itemid}: equips a certain item in your right-hand slot (the one you see on the left)
+equiphead {itemid}: equips a certain item in your head slot
+equiphelm {itemid}: equips a certain item in your helmet slot
+equiplegs {itemid}: equips a certain item in your legs slot
+equipring {itemid}: equips a certain item in your ring slot
+equipsring {itemid} {itemid}: same as equipring, but is used for rings that sparkle
+openbeltitem: opens the item located in your belt slot, in a new window
+openbpitem: opens your backpack in a new window
+openitem {itemid} {index} {window}: (read the hotkey wizard for more info)
+openitemnew {itemid} {index} {window}: same as openitem but the item will be opened in a new window
+opengrounditem {itemid}: if there's an item 1 square around you with a certain id this will open that item
+opengroundxyz {x} {y} {z}: opens a certain item on a specific coordinate
+refillammo: refills any item in your left hand, right hand or belt slot
+swapequip {text} {text}: swaps an item from one inventory slot to another
+unequip {text} {window}: unequips an item from one of your inventory slots and puts it into a specific backpack
+listboxsetup {id} {posx} {posy} {maxlines} {linetime} {direction}: sets up a listbox
+listboxaddline {id} {colorR} {colorG} {colorB} {linetext}: adds a text to an specified listbox's ID
+closeallwindows: closes all open inventory windows
+reopenwindows: a backpack reset, closes all windows and opens main BP + all the BPs inside it in order in which they are placed inside the BP
+$ringslot.property: will return the ID or COUNT of the item in the ring slot
+count: it will return the amount of items that are in the desired slot. (e.g. if [$beltslot.count < 20] refillammo, it will refill the ammunition if you have less than 20 items in the left hand)
+id: it will return the number ID of the item that are in the desired slot. (e.g. if [$lhandslot.id != 1234] equiplhand 1234, it will equip the left hand with a 1234 if a 1234 is not equipped)
+$beltslot.property: will return the ID or COUNT of the item in the belt (ammunition) slot
+$backslot.property: will return the ID or COUNT of the item in the backpack slot
+$rhandslot.property: will return the ID or COUNT of the item in the right hand slot
+$lhandslot.property: will return the ID or COUNT of the item in the left hand slot
+$amuletslot.property: will return the ID or COUNT of the item in the amulet slot
+$bootsslot.property: will return the ID or COUNT of the item in the boots slot
+$legsslot.property: will return the ID or COUNT of the item in the legs slot
+$chestslot.property: will return the ID or COUNT of the item in the chest (armor) slot
+$count: will return the last thing you counted (e.g. countitemsvisible 3031 | if [$count >= 1500] gotolabel depositgold, it will go to the label depositgold if the amount of items of ID 3031 is higher than 1500)
+
+Actions
+eatfood: eats food from your open backpacks
+stake {distance} {itemid}: will look for reachable stakeable corpses within a certain distance, and skin them
+skin {distance} {itemid}: will look for reachable skinnable corpses within a certain distance, and skin them
+fish {itemid optional}: tries to get a Fish using a fishing rod or if you want to fish a water elemental, just put the water elemental's body ID
+makerune {mp} {runespell}: creates a certain rune.
+
+Chat
+say {text}: says something in your Default chat
+pm {playername} {text}: private messages a message to a certain player
+rlsay {text}: says something in the Global chat
+gamesay {text}: says something in Game chat
+guildsay {text}: says something in Guild chat
+helpsay {text}: says something in Help chat
+npcsay {text}: says something in the NPC chat
+tradesay {text}: says something in the Trade chat
+(There doesn't seem to be a partysay command to talk in the Party channel)
+newmessages: an array of all new messages
+$lastmsg: the most recent message received (can be used with parameters like $lastmsg.sender)
+
+NPCs
+sellitems {itemid} {amount}: sells a specific amount of a certain item to an NPC
+sellitemsdownto {itemid} {amount} {itemvariable}: sells a specific amount of a certain item to an NPC down to a certain total desired amount depending on how many you already have
+buyitems {itemid} {amount}: buys a specific amount of a certain item
+buyitemsupto {itemid} {amount} {itemvariable}: buys a specific amount of a certain item, up to a certain total desired amount depending on how many you already have
+
+Modules
+$targetingon: if Targeting is turned on
+$waypointson: if Cavebot is turned on
+
+Bindings
+listas {text}: lists an auto bind with a custom text
+dontlist: use this if you don’t want to list a certain auto bind
+end: ends the execution of your bind, and restarts it
+turnoff: turns an auto bind off
+
+Navigation
+spydown: spies down one level
+spyup: spies up one level
+scrollview: makes it possible to look off-screen
+displaymap: displays a big minimap on your screen, really useful if you’re using navigation.
+altnavdisplay: an alternative way of displaying navigation friends and enemies.
+
+Notifications
+statusmessage {text}: will make a message appear where there appears (i.e. Sorry, not possible.)
+flash: makes a flash, like alarms does
+playsound {soundfilename}: plays a .wav sound file from your Elfbot folder (e.g. playsound 'defaultmessage.wav' )
+copyscreen: copy the current content of the Tibia window to the clipboard
+savescreen {filename}: saves the current contents of the Tibia window to a file on disk.
+displaytext {text}: displays a text message on your screen (you must enable On-screen Info Enabled and Activated hotkeys/shortkeys in Elfbot HUD)
+setcaption {text}: changes the text of your Tibia Client's window
+setcolor {colorR} {colorG} {colorB}: sets the color of the displaytext command
+setpos {x} {y}: sets the position for a displaytext command
+$screenleft: it will return you the correct number to position a text in the left part of screen. (e.g. auto 200 setpos $screenleft 100 | displaytext 'Testing the position' , it will show the text: Testing the position on the X coordinates in the left part of Tibia screen and in Y coordinates in the pixel 100)
+$screenright: it will return you the correct number to position a text in the right part of screen. (e.g. auto 200 setpos $screenright 100 | displaytext 'Testing the position' , it will show the text: Testing the position on the X coordinates in the right part of Tibia screen and in Y coordinates in the pixel 100)
+$screentop: it will return you the correct number to position a text in the top part of screen. (e.g. auto 200 setpos 256 [$screentop+200] | displaytext 'Testing the position' , it will show the text: Testing the position on the X coordinates in the pixel 256 of Tibia screen and in Y coordinates in the top part and more 200 pixels below)
+$screenbottom: it will return you the correct number to position a text in the bottom part of screen. (e.g. auto 200 setpos 256 [$screenbottom-200] | displaytext 'Testing the position' , it will show the text: Testing the position on the X coordinates in the pixel 256 of Tibia screen and in Y coordinates in the bottom part and more 200 pixels above)
+
+Connection
+connect {worldname} {accname} {accpass} {charname}: log in with a specific account
+reconnect: reconnects you
+logout: makes you logout
+xlog: x-logs you out of the game (hard Exit)
+Files & Logs
+exec {string}: will execute a certain command
+$filerandomline.'msg.txt': grabs a random line from the file, the file should be in elfsettings folder
+$fileisline.{filename}.{text}: returns 1 or 0 if {text} exists as a line in {filename} (e.g. $fileisline.'safelistpk.txt'.'$pk.name' )
+$fileline.{filename}.n: will return the nth line of the file {filename} (e.g. say '$fileline.list-salute.txt.30]' , it will make you say the 30th line of the file list-salute.txt)
+log {text}: logs a text on a new line to the file elfscript.log along with the current time and date
+filewrite {filename} {text}: writes some text to a file, but does not add a new line afterwards
+filewriteline {filename} {text}: writes text and inserts a line break afterwards in the file
+filedelete {filename}: deletes a file
+
+Monsters & Players
+shootableplayers: an array of all players at a position that can be shot (e.g. foreach 'shootableplayers' $p {say 'hi $p.name'})
+shootablemonsters: an array of all monsters at a position that can be shot
+shootablecreatures: includes both players and monsters
+screenplayers: an array of all players on screen (e.g. foreach 'screenplayers' $p {say 'hi $p.name'})
+screenmonsters: an array of all monsters on screen
+screencreatures: includes both players and monsters
+allcreatures: includes both players and monsters
+allplayers: an array of all players detected (includes other floors, open the Creatures section to see an example)
+allmonsters: an array of all monsters detected (includes other floors
+floorplayers: same as allplayers but just for the current floor
+floorcreatures: same as floorcreatures but just for the current floor
+floormonsters: same as floormonsters but just for the current floor
+$monstersaround.X: will return you how many monsters are around X SQMs around you (e.g. if [$monstersaround.1 >= 4] say exori, it will make you cast exori if there are more than 4 monsters around you in a range of 1 SQM)
+$playersaround.X: will return you how many players are around X SQMs around you (e.g. if [$playersaround.4 == 0] say 'exori mas' , it will make you cast exori mas if there are no players around you in a range of 4 SQMs)
+
+Variables
+
+Player
+self: yourself (e.g. useoncreature 3191 self)
+target: your current target
+$attacker: attacker object (e.g. if $attacker.isplayer { attack $attacker.name })
+$followed: creature following (e.g. auto 100 isnottargeting {if [$followed.name != 'NAME OF FRIEND'] follow 'NAME OF FRIEND'})
+$connected: if you are connected or not (e.g. ifnot '$connected' reconnect ' wait 6000)
+$mp: will return your current mana (e.g. if [$mp ⇐ 200] mana self, it will use a mana potion if your mana is under 200)
+$mppc: will return your mana percentage (e.g. if [$mppc ⇐ 60] mana self, it will make you drink a mana potion if your MP% is lower than 60)
+$maxmp: will return your max mana (e.g. if [($maxmp-$mp) >= 500] mana self, it will use a mana potion if your maxmana-mana is higher than 500)
+$hp: will return your current health (e.g. if [$hp ⇐ 1500] playsound 'lowhealth.wav' , it will play the sound lowhealth.wav if your health is under 1500)
+$hppc: will return your health percentage (e.g. if [$hppc ⇐ 90] say 'exura' , it will make you cast if your HP% is lower than 90)
+$maxhp: will return your max health (e.g. if [$hp < 65*$maxhp/100] say 'exura san' , it will cast exura san if your HP% is lower than 65)
+$cap: will return your capacity (e.g. if [$cap < 300] gotolabel deposit, it will go to the label deposit if your cap is below 300)
+$exp: will return your experience (e.g. if [$exp > 4200] gotolabel logout, it will go to the label logout if your exp is higher than 4200)
+$level: your current level (e.g. auto 500 dontlist | if [$lastlvl +1 == $level] savescreen | set $lastlvl $level)
+$mlevel: will return your magic level (e.g. if [$mlevel >= 15 && $level >= 45] sd target, it will shoot an SD rune if your level is higher than 45 and your magic level higher 15)
+$soul: will return your current amount of soul points (e.g. if [$soul >= 5 && $level >= 45] makerune [$maxmp-20] 'adori gran mort' , it will make a sudden death rune if your soul points are higher than 5 and your are above level 45 when you are at maxmana - 20)
+$stamina: will return your current stamina time in minutes (e.g. if [$stamina ⇐ 60*14] xlog, it will make you logout if your stamina is below 14 hours)
+$name: will return your own name (e.g. say 'hi, my name is $name' , it will make you say: hi, my name is YOURNAME)
+$sbtime: will return how much time of soft boots you still have (you must look the soft boots first) (e.g. setcaption 'Soft Boots Time: $formattime.$sbtime' , it will show in the window title: Soft Boots Time: SOFTTIME)
+$poisoned: will return if you are poisoned (e.g. if [$poisoned == 1] say 'exana pox' , it will cast exana pox if you are poisoned)
+$poisondmg: will return how much of damage you are recieving from the poison (e.g. if [$poisondmg > 10] say 'exana pox' , it will say exana pox if the poison damage is higher than 10)
+$manashielded: will return if you are using mana shield (e.g. if [$manashielded == 0] say 'Utamo Vita', it will cast 'Utamo Vita' if you are not mana shielded)
+$mshieldtime: will return the time left in milliseconds to your magic shield goes out
+$hastetime: will return the time left in milliseconds to your haste goes out
+$invistime: will return the time left in milliseconds to your invisible goes out
+$strengthtime: will return the time left in milliseconds to your strength goes out (useful for utito tempo and similar spells)
+$drunk: will return if you are drunk (e.g. if [$drunk == 1] {equipsring 3097 3099 | wait 15000 | equipring 3007}, it will equip the ring of ID 3097, and after 15 seconds, it will equip the ring of ID 3007 to check if you are still drunk)
+$hasted: will return if you are using haste (e.g. if [$hasted == 0] say 'utani hur' , it will cast utani hur if you are not hasting)
+$paralyzed: will return if you are paralyzed (e.g. if [$paralyzed == 1] say 'exura' , it will cast exura if you are paralyzed)
+$connected: will return if you are connected (e.g. if [$connected == 0] reconnect, it will make you reconnect if you are not connected)
+$battlesign: it will return 1 if you are battle signed, and 0 if you are not (example: ifnot $battlesign logout, it will make you logout if you aren't PZ locked)
+$redbattlesign: it will return 1 if you are red battle signed, and 0 if you are not
+$pkname: will return the name of player that is attacking you (e.g. ifplayerattacking attack $pkname, it will make attack back the player that is attacking you)
+
+Game & System
+$systime: will return your computer's time in the format HH:MM:SS (e.g. 23:59:59)
+$cutstr.$systime.1.2: hours (e.g. 23)
+$cutstr.$systime.4.2: minutes (e.g. 59)
+$cutstr.$systime.7.2: seconds (e.g. 59)
+$time: will return a time in seconds (e.g. 441839)
+$timems: will return a time in miliseconds (e.g. 441839000)
+$deltatime: will return how long since you loaded the bot (in seconds) (e.g. setcaption 'Played this session: $deltatime' , it will show in the window title: Played this session: TIMEINSECONDS)
+$deltatimems: will return how long since you loaded the bot (in miliseconds) (e.g. setcaption 'Played this session: $deltatimems' , it will show in the window title: Played this session: TIMEINMILISECONDS)
+$exptnl: will return how much experience left for your next level (e.g. setcaption 'Exp Left: $exptnl' , it will show in the window title the text: Exp Left: EXPERIENCETONEXTLEVEL)
+$exph: will return how your average experience/hour (e.g. setcaption 'Exp Left: $exptnl / Exp/Hour: $exph' , it will show in the window title the text: Exp Left: EXPERIENCETONEXTLEVEL / Exp/Hour: EXPERIENCEPERHOUR)
+$expgained: will return how much experience you gained since you loaded the ElfBot (e.g. setcaption 'Exp Left: $exptnl / Exp/Hour: $exph / Gained this session: $expgained' , it will show in the window title the text: Exp Left: EXPERIENCETONEXTLEVEL / Exp/Hour: EXPERIENCEPERHOUR / Gained this session: EXPERIENCEYOUGAINED)
+$timetnl: will return you how long would you take to level up with your current experience/hour (e.g. setcaption 'Exp Left: $exptnl / Exp/Hour: $exph / Gained this session: $expgained / Time Left: $timetnl' , it will show in the window title the text: Exp Left: EXPERIENCETONEXTLEVEL / Exp/Hour: EXPERIENCEPERHOUR / Gained this session: EXPERIENCEYOUGAINED / Time Left: TIMELEFTFORLEVEL)
+$exptolevel.xx: will return how much of experience left for XX level (e.g. setcaption 'Exp to Level 100: $exptolevel.100' , it will show in the window title the text: Exp to Level 100: EXPERIENCETOLEVEL100)
+$timetolevel.xx: will return how long would you take to level to XX level with your current experience/hour (e.g. setcaption 'Time to Level 100: $timetolevel.100', it will show in the window title the text: 'Time to Level 100: TIMETOLEVEL100')
+$formattime.yy: will transform any number to a time number, the number must be in seconds, like 06:07:08 or 06h07m08s (e.g. setcaption 'Played this session: $formattime.$deltatime' , it will show in the window title: Played this session: FORMATEDTIME)
+$formatnum.yy: will transform any number to a number, like transforming 160293' to 160,293 (e.g. setcaption 'Exp To Level 167: $formatnum.$exptolevel.167, it will show in the window title: 'Exp To Level 167: FORMATEDEXPTOLEVEL167')
+set $random $rand.N.M: get a random number between N and M
+
+Sub-variables
+Players and Creatures
+.name: will return the name of someone, for example: $target.name will return your target's name
+.id: will return the ID of someone, for example: $enemy.id will return your best enemy's ID
+.posx: will return the posx of someone, for example: $friend.posx will return your best friend's posx
+.posy: will return the posy of someone, for example: $friend.posy will return your best friend's posy
+.posz: will return the posz of someone, for example: $friend.posz will return your best friend's posz
+.dir: will return the direction that someone is facing, for example: $self.dir will return your own direction number
+0: North
+1: East
+2: South
+3: West
+.isonnavi: will return 1 if someone is connected to the navigation, and 0 if not, for example: $friend.isonnavi will return 1 if the best friend chosen by the bot is connected to the navigation server, and 0 if not
+.outfit: will return the outfit number of someone, for example: $subenemy.outfit will return your best sub-enemy's outfit number
+.hppc: will return the percentage of HP of someone, for example: $target.hppc will return your target's HP percent
+.speed: will return the speed of someone, for example: $anyenemy.speed will return your best enemy (or best sub-enemy)'s speed
+.skull: will return the skull type of someone, for example: $self.skull will return your own skull type
+0: No Skull
+1: Yellow Skull
+2: Green Skull
+3: White Skull
+4: Red Skull
+5: Black Skull
+.party: will return the party icon of someone is in a party, and 0 if not on party, for example: $self.party will return 4 if you are in the leader of a party
+0: No Party
+1: Inviting (Leader Yellow)
+2: Inviting (Member Blue)
+3: on Party (Member Blue)
+4: on Party (Leader Yellow)
+5: Exp Sharing, working (Member Blue)
+6: Exp Sharing, working (Leader Yellow)
+7: Exp Sharing, on standby (Member Blue)
+8: Exp Sharing, on standby (Leader Yellow)
+9: Exp Sharing, not working (Member Blue)
+10: Exp Sharing, not working (Leader Yellow)
+.warbanner: will return the war banner of someone, and 0 if not on a guild war, for example: $target.warbanner will return 2 if your target is a guild enemy
+0: No War
+1: Green Banner (Friend)
+2: Red Banner (Enemy)
+3: Blue Banner (In a War that you're not fighting)
+.isenemy: will return 1 if someone is an enemy, and 0 if not, for example: $target.isenemy will return 1 if your current target is an enemy, and 0 if not
+.isfriend: will return 1 if someone is a friend, and 0 if not, for example: $target.isfriend will return 1 if your current target is a friend, and 0 if not
+.issubenemy: will return 1 if someone is a sub-enemy, and 0 if not, for example: $target.issubenemy will return 1 if your current target is a sub-enemy, and 0 if not
+.issubfriend: will return 1 if someone is a sub-friend, and 0 if not, for example: $target.issubfriend will return 1 if your current target is a sub-friend, and 0 if not
+.isleader: will return 1 if someone is a combo leader listed in Aimbot dialog, and 0 if not, for example: $target.isleader will return 1 if your current target is a leader, and 0 if not
+.distx: will return how many sqms to the west or east someone is from you, $target.distx will return how many sqms to the west or east your target is from you
+.disty: will return how many sqms to the north or south someone is from you, $target.disty will return how many sqms to the north or south your target is from you
+.distance: will return the highest number of .distx and .disty, $target.distance will return how many sqms a target is from you
+.ismonster: will return 1 if someone is a monster or a npc, 0 if not,$followed.ismonster will return 1 if your current followed is a monster, 0 if not
+.isnpc: will return 1 if someone is a npc, 0 if not, $followed.isnpc will return 1 if your current followed is a npc, 0 if not
+.isplayer: will return 1 if someone is a player, 0 if not, $followed.isplayer will return 1 if your current followed is a player, 0 if not
+.isonscreen: will return 1 if someone is on the same floor as you and on the visible portion of the screen, 0 if not, $followed.ismonster will return 1 if your current followed is on your screen, 0 if not
+.isshootable: will return 1 if nothing obstructs a projectile trajectory between you and him, 0 if not (e.g. $followed.isshootable will return 1 if your current followed is shootable, 0 if not)
+.canshoot:.'name' will return 1 if someone can shoot the creature 'name', $friend.canshoot.'Bubble' will return 1 if your best friend can shoot 'Bubble', 0 if not
+exposedcount: will return how many friends/yourself can shoot someone, $coretarget.exposedcount will return how many friends + you can shoot the coretarget
+shotcount: will return how many Sudden Death rune someone has received on the last 2 seconds, $self.shotcount will return how many Sudden Death rune you have received on the last two seconds
+.isparalyzed: will return 1 if someone is paralyzed, 0 if not, $target.isparalyzed will return 1 if your target is paralyzed, 0 if not
+.color1: will return the head color's number of someone, $self.color1 will return yours head color's number, 0 if not
+.color2: will return the primary color's number of someone, $self.color2 will return yours primary color's number, 0 if not
+.color3: will return the secondary color's number of someone, $self.color3 will return yours secondary color's number, 0 if not
+.color4: will return the detail color's number of someone, $self.color4 will return yours detail color's number, 0 if not
+Colors are numbered from 0 to 132 and ordered based on the color palette you see when changing your outfit, here's a few examples:
+White: 0
+Green: 82
+Blue: 87
+Yellow: 79
+Orange: 78
+Red: 94
+Maroon: 132
+Black: 114
+Also, there will be some exclusive variables if the bot managed to get a look at the player, it will have the haslookinfo property set. You should verify that it's set before using the below fields:
+.haslookinfo: will return 1 if player has the below properties available: if [$target.haslookinfo && $target.hp < 400] sd $target.id (since $target.hp is only available if $target.haslookinfo is set. Otherwise, $target.hp would return 0 and the alone condition $target.hp < 400 would be true!)
+.guild: will return someone's guild, for example: $target.guild will return your target's guild
+.level: will return someone's level, for example: $enemy.level will return the best enemy's level
+.voc: will return someone's vocation (short), for example: $pattacker.voc will return the current player attacking you's vocation (like NV (no vocation), D, S, P, K, ED, MS, RP, EK)
+.vocation: will return someone's vocation (long), for example: $attacked.vocation will return the attacked player's vocation (like No Vocation, Druid, Sorcerer, Paladin, Knight, Elder Druid, Master Sorcerer, Royal Paladin, Elite Knight)
+.isknight: will return 1 if someone is a knight, and 0 if not, for example: $target.isknight will return 1 if your current target is a knight, and 0 if not
+.ispaladin: will return 1 if someone is a paladin, and 0 if not, for example: $target.ispaladin will return 1 if your current target is a paladin, and 0 if not
+.issorcerer: will return 1 if someone is a sorcerer, and 0 if not, for example: $target.issorcerer will return 1 if your current target is a sorcerer, and 0 if not
+.isdruid: will return 1 if someone is a druid, and 0 if not, for example: $target.isdruid will return 1 if your current target is a druid, and 0 if not
+.ismage: will return 1 if someone is a druid or a sorcerer, and 0 if not, for example: $followed.ismage will return 1 if the current followed player is a mage, 0 if not
+.maxhp: will return someone's max hp, for example: $friend.maxhp will return the best friend's max hp
+.hp: will return someone's current hp, for example: $friend.hp will return the best friend's current hp
+.maxmp: will return someone's max mp, for example: $subenemy.maxmp will return the best sub-enemy's maxmp
+.mp: will return someone's max hp, for example: $subenemy.mp will return the best sub-enemy's current mp
+.attackedme: will return 1 if someone attacked you, and 0 if not, for example: $friend.attackedme will return 1 if the best friend attacked you, and 0 if not
+
+Messages
+You can also use foreach 'newmessages' $varname action. These variables have some properties, we will use a message as example 16:16 Lucas Terra [2]: hey, u there?, that was sent in Default chat.
+.sender: will return the name of the message sender, in the example: $curmsg.sender will return Lucas Terra
+.level: will return the level of message sender, in the example: $curmsg.level will return 2
+.content: will return what was wrote in the message, in the example: $curmsg.content will return hey, u there?
+.formatted: will return the message formatted (the original message without time), in the example: $curmsg.formatted will return Lucas Terra [2]: hey, u there?
+.channel: will return in what channel the message was sent, in the example: $curmsg.channel will return Default
+.color: will return the message's color, in the example: $curmsg.color will return 16838639
+.isdefault: will return 1 if the message was sent in default, and 0 if not, in the example: $curmsg.isdefault will return 1
+.isyell: will return 1 if the message was a yell, and 0 if not, in the example: $curmsg.isyell will return 0
+.iswhisper: will return 1 if the message was a whisper, and 0 if not, in the example: $curmsg.iswhisper will return 0
+.isprivate: will return 1 if the message was a private, and 0 if not, in the example: $curmsg.isprivate will return 0
+.isbroadcast: will return 1 if the message was a broadcast (message in green that appears in the center of screen), and 0 if not, in the example: $curmsg.isbroadcast will return 0
+.isredtext: will return 1 if the message was a red text (like a server save message), and 0 if not, in the example: $curmsg.isredtext will return 0
+.isorangetext: will return 1 if the message was a orange text (like a tutor message in help), and 0 if not, in the example: $curmsg.isredtext will return 0
+.isnpc: will return 1 if the message was a sent in NPC channel, and 0 if not, in the example: $curmsg.isnpc will return 0
+.ischannel: will return 1 if the message was sent in help or trade or game-chat or private-channels, and 0 if not, in the example: $curmsg.ischannel will return 0
+.isbotlook: will return 1 if the message was a bot look (when the bot looks at someone it isn't displayed), and 0 if not, in the example: $curmsg.isbotlook will return 0
+.isguild: will return 1 if the message was sent in guild-chat, and 0 if not, in the example: $curmsg.isguild will return 0
+.isaction: will return 1 if the message was an action (like the Ahhh… of mana potions), and 0 if not, in the example: $curmsg.isaction will return '0'
+.isstatus: will return 1 if the message was a status message (like the Sorry, not possible), and 0 if not, in the example: $curmsg.isstatus will return 0
+.isinfo: will return 1 if the message was a green text (like a look at players), and 0 if not, in the example: $curmsg.isinfo will return 0
+.isgame: will return 1 if the message was sent in game-chat, and 0 if not, in the example: $curmsg.isgame will return '0'
+.isrl: will return 1 if the message was sent in RL-chat, and 0 if not, in the example: $curmsg.isrl will return '0'
+.istrade: will return 1 if the message was sent in trade channel, and 0 if not, in the example: $curmsg.istrade will return '0'
+.ishelp: will return 1 if the message was sent in help channel, and 0 if not, in the example: $curmsg.ishelp will return '0'
+.isnavi: will return 1 if the message was sent in the navigation server, and 0 if not, in the example: $curmsg.isnavi will return '0'
+
+Settings
+set $varname {value}: creates a new variable/assigns a new value to an already existing one
+inc $varname: it's the same as doing set $variablename [$variablename+1]
+dec $varname: same as doing set $variablename [$variablename-1]
+clear $varname: it's the same as doing set $variablename 0
+seticonactive {iconname} {timems}: puts an icon into the active state for a certain amount of time
+seticontext {iconname} {text}: adds extra text to an icon, the icon must have an icon ID (not just text) for it to work, the added text will be placed to the top right of the icon
+loadcavebot {scriptname}: loads a cavebot script. The file must be on your scripts folder.
+loadtargeting {scriptname}: loads a targeting script. The file must be on your scripts folder.
+loadsetting {settingname}: loads a setting. The file must be on your elfsettings folder.
+loadscript {scriptname.elfs}: loads a script in text form. The file must be on your elfsettings folder.
+setalarm {alarmname} {S} {P} {X}: lets you enable/disable Cavebot alarms, the ones with checkboxes. S/P/X can be 0 (unchecked) or 1 (checked)
+
+Alarm names:
+playeronscreen
+gmdetected
+playerattacking
+Default chat msg?
+Private chat msg?
+Disconnected?
+setautocombo {on/off/toggle}: enable/disable autocombo
+setcavebot {on/off/toggle}: enable/disable follow waypoints
+settargeting {on/off/toggle}: enable/disable targeting
+settradeoptions {bpmode} {capmode} {equipmode}: changes the option on trade mode, we don't know how this works exactly, can't find info online (if you know about it, please Contribute!)
+setfollowwaypoints {on/off/toggle}: enable/disable follow waypoints
+setopennextbp {on/off/toggle}: enable/disable set open next bp
+setoutfit {playername} {outfitid}: dresses someone with a specified outfit. It will dress yourself if you don't specify the playername. Check Outfit ID list for a list of outfits and a persistent script that will reveal player vocation. Note that these outfit changes are just visible by you, even when changing your outfit it is just visible by you (and Elfbot, you can actually do stuff based on your outfit ID/color)
+setitemoutfit {playername} {itemid}: dresses someone with a specified item ID, like chameleon
+setoutfitcolor {playername} {headcolor} {primary} {secondary} {detail} {addon}: dresses someone with your desired outfit colors/addons
+{addon}: 0: no addons, 1: first addon, 2: second addon, 3: first and second addon
+setrelation {playername} {relation} {priority}: lets you flag players in real time as a sub/enemy/friend, according to conditions that you impose (e.g. setrelation '$attacker.name' 'enemy' )
+
+Conditionals
+Cavebot Related
+islocation: will execute a certain action only if you are on the exactly location of action waypoint
+isnotlocation: will execute a certain action only if you are not on the exactly location of action waypoint
+isdistance {x}: will execute a certain action only if you are X sqms close to the action waypoint
+isnotdistance {x}: will execute a certain action only if you are not X sqms close to the action waypoint
+isposz {posz}: will execute a certain action only if you are on the specified posz
+Alert Related
+ifdefaultmessage: will execute a certain action only if you received a default message within last 2 seconds
+ifplayerattacking: will execute a certain action only if a player attacked you within last 2 seconds
+ifprivatemessage: will execute a certain action only if you received a private message within last 2 seconds
+ifgm: will execute a certain action only if a GM is detected around you
+ifnogm: will execute a certain action only if a GM is not detected around you
+ifplayeronscreen: will execute a certain action only if a player is detected around you
+ifnoplayeronscreen: will execute a certain action only if a player is not detected around yo
+
+Misc Related
+These conditionals don't need the if, useful to make your code shorter and more readable. Example: auto 200 caplower 100 closeallwindows
+
+countlower {amount}: will execute a certain action only if the last item counted is lower than a certain amount
+counthigher {amount}: will execute a certain action only if the last item counted is higher than a certain amount
+caplower {num}: will execute a certain action only if your capacity is lower than a certain amount
+caphigher {num}: will execute a certain action only if your capacity is higher than a certain amount
+ifdrunk: will execute a certain action only if you are currently with drunk status
+ifhasted: will execute a certain action only if you are currently with haste status
+ifnothasted: will execute a certain action only if you are not currently with haste status
+ifmanashielded: will execute a certain action only if you are currently with mana shield status
+ifnotmanashielded: will execute a certain action only if you are not currently with mana shield status
+ifpoisoned: will execute a certain action only if you are currently with poison status
+ifparalyzed: will execute a certain action only if you are currently with paralyze status
+ifnotparalyzed: will execute a certain action only if you are not currently with paralyze status
+isattackedname {creaturename}: will execute a certain action only if the monster you are currently attacking has the specified name
+isonscreen {creaturename}: will execute a certain action only if there is a creature with the specified name on your screen
+isnotonscreen {creaturename}: will execute a certain action only if there is not a creature with the specified name on your screen
+istargeting: will execute a certain action only if currently targeting a monster
+isnottargeting: will execute a certain action only if not currently targeting a monster
+istargetname {creaturename}: will execute a certain action only if currently targeting a monster with the specified name
+hplower {num}: will execute a certain action only if you are with HP lower than the specified number
+hphigher {num}: will execute a certain action only if you are with HP higher than the specified number
+hpmissinglower {num}: will execute a certain action only if you are with missing HP lower than the specified number
+hpmissinghigher {num}: will execute a certain action only if you are with missing HP higher than the specified number
+mplower {num}: will execute a certain action only if you are with MP lower than the specified number
+mphigher {num}: will execute a certain action only if you are with MP higher than the specified number
+mpmissinglower {num}: will execute a certain action only if you are with missing MP lower than the specified number
+mpmissinghigher {num}: will execute a certain action only if you are with missing MP higher than the specified number
+safe: will execute a certain action only if the healing section of the bot is not currently healing yourself
+targethplower {num}: will execute a certain action only if the target is with HP % lower than the specified number
+
+Loopings
+foreach {listtype} $varname {action}: will iterate through a list type and make a desired action
+while {condition} {action}: will execute an action while the conditions are satisfied
+loop {amountoftimes} {action}: will execute an action X amount of times
+Conditional expressions
+To be used with variables:
+if {conditions} {action}: will execute a certain action only if it satisfies some conditions
+ifnot {conditions} {action}: will execute a certain action only if it doesn't satisfy some conditions
+else {action}: will execute a certain action only if the corresponding if/ifnot expression wasn’t satisfied
+[string1 ? string2]: returns the position of string2 inside of string1, or 0 if string2 is not present there (example: if [$curmsg.content ? 'soft'] playsound tradealarm.wav, it will play the sound tradealarm.wav, if you receive a message containing the word soft, like sell soft boots, buy soft boots and boots of haste, (because it will return a non-zero position and the if will be evaluated as true)
+$token.{string}.n: will return the nth token (word/element) of a string. A token is either a word that ends with a space, or the inside of a single-quote/double-quote. If you omit to specify n, then the returned string will simply be the first token of {string}. If {string} is 12 “34 56” 78, n=1 will return 12, n=2 will return 34 56, and n=3 will return 78 (example: if [$token.'$lastmsg.sender' == 'GM'] logout, it will make you logout if the first name of the last message you recieve is GM)
+$cutstr.{string}.{startpos}.{length}: will let you cut a part of a sentence (e.g. $cutstr.'123456'.2.3 will return 234, that is 3 characters starting at the 2nd character. You can also omit the length parameter, in which case the remainder of the string will be returned: $cutstr.'123456'.2 will return 23456)
+
+Advanced scripting
+[ ]: Square brackets enclose statements (e.g. if [$hppc < 90])
+{ }: Curly brackets enclose code to be executed (e.g. if [$hppc < 90]{ say 'omg' })
+( ): Parentheses enclose operands (e.g. if [$hppc < 90 && (skull == 0 || skull == 3)])
+&&: Double-ampersands acts as an AND
+||: Double-pipes acts as an OR
